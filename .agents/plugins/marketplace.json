@@ -1,13 +1,13 @@
 {
-  "name": "agent-skills",
+  "name": "spector",
   "interface": {
-    "displayName": "Agent Skills"
+    "displayName": "Spector"
   },
   "plugins": [
     {
-      "name": "agent-skills",
+      "name": "spector",
       "version": "0.6.8",
-      "description": "Production-grade engineering skills covering every phase of software development: spec, plan, build, verify, review, and ship.",
+      "description": "Write structured specs before coding and record the decisions and documentation that keep them alive.",
       "source": {
         "source": "local",
         "path": "./"

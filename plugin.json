@@ -1,5 +1,5 @@
 {
-  "name": "agent-skills",
+  "name": "spector",
   "version": "0.6.8",
-  "description": "Production-grade engineering skills for AI coding agents."
+  "description": "Spec-driven development skills for AI coding agents — write and maintain specs and decision records."
 }

@@ -6,10 +6,10 @@ paths:
 
 # Adding or changing a skill
 
-This repo already covers most of the development lifecycle, so most new-skill ideas overlap an existing skill or an open PR. Before creating a new `skills/<name>/` directory or significantly reworking an existing one:
+This fork is kept down to skills that generate or maintain specs: `spec-driven-development` and `documentation-and-adrs`. Before creating a new `skills/<name>/` directory or significantly reworking an existing one:
 
-- Run the pre-flight checks in [CONTRIBUTING.md](../../CONTRIBUTING.md#before-proposing-a-new-skill): search the catalog, check open PRs (`gh pr list --state open`), and justify the gap.
-- Prefer extending an existing skill over adding a near-duplicate. If the idea overlaps an existing skill, edit that skill instead of adding a new directory.
-- Keep the `SKILL.md` within [docs/skill-anatomy.md](../../docs/skill-anatomy.md), and never duplicate content between skills, reference the other skill instead.
+- Confirm the idea generates a spec or keeps one (or its decision records) accurate over time. Anything else belongs in the full upstream pack, not here.
+- Prefer extending an existing skill over adding a near-duplicate.
+- Follow the standard anatomy (Overview, When to Use, Process, Common Rationalizations, Red Flags, Verification), and never duplicate content between skills, reference the other skill instead.
 
-CONTRIBUTING.md is the single source of truth for the full workflow; this rule points to it rather than restating its checklist.
+See [CONTRIBUTING.md](../../CONTRIBUTING.md) for the full workflow.
