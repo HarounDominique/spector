@@ -12,10 +12,10 @@
       "version": "0.6.8",
       "source": {
         "source": "github",
-        "repo": "addyosmani/agent-skills"
+        "repo": "HarounDominique/spector"
       },
       "description": "Write structured specs before coding and record the decisions and documentation that keep them alive.",
-      "homepage": "https://github.com/addyosmani/agent-skills",
+      "homepage": "https://github.com/HarounDominique/spector",
       "license": "MIT",
       "keywords": ["skills", "agents", "spec", "documentation", "adr"]
     }

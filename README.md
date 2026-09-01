@@ -19,13 +19,15 @@ A single `/spec` run produces one spec for one iteration. Large or continuously 
 
 Because these specs cite each other, they rot as the project evolves — headings move, contracts change, a blocker clears without anyone updating the table. `/spec-sync` runs the propagation protocol after any module spec changes: it updates the nexus, re-resolves every cross-spec citation (module id + heading, never a line number — line numbers rot on the next unrelated edit), propagates interface changes to dependents, and recomputes readiness. See [spec-driven-development §Phase 0](skills/spec-driven-development/SKILL.md) for the full protocol.
 
+Independent modules (no shared entry in `Depends on`) are safe to work on in parallel: each module is worked on its own branch, named after its module id, and reaches `master` only after `/spec-sync` passes.
+
 ## Quick Start
 
 **Claude Code:**
 
 ```bash
-git clone https://github.com/addyosmani/agent-skills.git
-claude --plugin-dir /path/to/agent-skills
+git clone https://github.com/HarounDominique/spector.git
+claude --plugin-dir /path/to/spector
 ```
 
 Skills are plain Markdown — they work with any agent that accepts system prompts or instruction files. Copy `skills/<name>/SKILL.md` into whatever mechanism your agent uses to load instructions.
@@ -62,7 +64,7 @@ Every skill follows a consistent anatomy:
 ## Project Structure
 
 ```
-agent-skills/
+spector/
 ├── skills/
 │   ├── spec-driven-development/   # Write the spec
 │   └── documentation-and-adrs/    # Keep it (and decisions) documented

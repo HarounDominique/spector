@@ -2,7 +2,7 @@
 
 This is Spector, a trimmed fork of the agent-skills project, kept down to the skills that generate or maintain specs.
 
-> **Scope:** This file configures agents working on the [`addyosmani/agent-skills`](https://github.com/addyosmani/agent-skills) repository itself, not other projects. Don't copy it into another project or a global agent configuration; the reusable assets are the skills in `skills/`.
+> **Scope:** This file configures agents working on the [`HarounDominique/spector`](https://github.com/HarounDominique/spector) repository itself, not other projects. Don't copy it into another project or a global agent configuration; the reusable assets are the skills in `skills/`.
 
 ## Project Structure
 
