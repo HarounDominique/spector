@@ -72,6 +72,7 @@ Build order: identity → billing, notifications → reporting
 - **Interfaces live at the boundary.** The table records that `billing` depends on `identity`; the contract between them belongs in the provider module's spec, cited from the nexus by id and heading (see Citation Convention below), never copied into the nexus.
 - **Status is not aspirational.** `draft` (spec not yet written or not yet reviewed), `ready` (spec approved, no unresolved blockers, safe to start Plan/Tasks/Implement), `blocked` (waiting on another module's interface or decision — name it in `Blocked by`), `in-progress`, `done`. A module moves to `ready` only when everything in its `Blocked by` column is `done`.
 - **The nexus is gated like every phase.** The human reviews module boundaries, dependency direction, tech foundations, and build order before any module spec is written. Getting the map wrong is expensive; reviewing ten lines is not.
+- **One branch per module.** All work on a module — its spec, plan, tasks, and implementation — happens on a branch named after its module id (e.g. `identity`, `module/billing`). Never edit two modules' specs on the same branch. This is what makes independent modules (no shared entry in `Depends on`) safe to work on in parallel without colliding: each module's changes land on `master` only through its own branch and PR.
 
 **Then recurse per module.** Run Specify → Plan → Tasks → Implement for each module in dependency order. Each module gets its own spec, scoped to that module's objective, boundaries, and success criteria, and inheriting Tech Foundations from the nexus instead of restating them. Save the nexus at the project root and each module's spec alongside it, named by module id (`SPEC-identity.md`, `SPEC-billing.md`) — the nexus, not filename guessing, is the index of what exists and what state it's in.
 
@@ -83,6 +84,7 @@ Specs cite each other by **module id + section heading**, never by line number o
 
 A nexus spec rots the same way a single spec does, faster: every module edit can invalidate another module's citations, the nexus status table, or the build order. Run this **sync protocol** every time a module spec changes — not just at the end of a phase:
 
+0. **Work on the module's branch.** Confirm you're on the module's own branch (per "One branch per module" above), not `master` and not another module's branch. Push and merge to `master` only after steps 1–6 below pass — that keeps `master` always current and lets other modules' branches build on it without inheriting drift.
 1. **Update the module's own entry.** Status, and Blocked by if the change resolves or introduces a blocker.
 2. **Find citers.** Search the project for the module id (`grep -rl '<module-id>'` across `SPEC-*.md`) to find every spec and the nexus itself that references it.
 3. **Re-resolve every citation found.** For each `SPEC-<id>.md#<heading>` reference to the changed spec, confirm the heading still exists and still means what the citer assumed. Fix or flag drift — don't leave a citation pointing at a heading that moved or a contract that changed meaning.
@@ -268,6 +270,7 @@ If the project has more than one spec, this is not enough on its own — a modul
 - A nexus status table that says `blocked` for a dependency that's actually `done`, or `ready` for a module whose blocker never resolved
 - Cross-spec references by line number instead of module id + heading
 - A nexus Change Log with gaps — edits happened but no sync pass recorded what propagated
+- Module spec edited directly on `master` or on another module's branch instead of its own
 
 ## Verification
 
@@ -281,3 +284,4 @@ Before proceeding to implementation, confirm:
 - [ ] If the request bundles several independently testable capabilities, a nexus spec (module ids, dependency direction, build order, tech foundations) was approved before any module spec was written
 - [ ] Every module spec traces to a module id in the nexus, and cites other modules by id + heading, never by line number
 - [ ] After any module spec edit in a multi-spec project, the sync protocol ran: the module's status/blockers are current, citers were checked, propagated changes and the sync itself are logged in the nexus Change Log
+- [ ] Module work happened on that module's own branch, and reached `master` only after the sync protocol passed
