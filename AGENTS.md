@@ -6,7 +6,7 @@ This file provides guidance to AI coding agents (Claude Code, Cursor, Copilot, A
 
 ## Repository Overview
 
-This is Spector, a trimmed fork kept down to the skills that generate or maintain specs: `spec-driven-development` and `documentation-and-adrs`. No other skills, agent personas, reference checklists, hooks, or eval tooling remain.
+This is Spector, a trimmed fork kept down to the skills that generate or maintain specs: `spec-driven-development`, `documentation-and-adrs`, and `spec-corpus-hygiene`. No other skills, agent personas, reference checklists, hooks, or eval tooling remain.
 
 ## Intent → Skill Mapping
 
@@ -14,6 +14,7 @@ This is Spector, a trimmed fork kept down to the skills that generate or maintai
 - A request bundles several independently testable capabilities (or several screens/views/menus) → `spec-driven-development` Phase 0, propose a nexus spec (`SPEC-NEXUS.md`) before writing any module spec
 - A module spec just changed in a multi-spec project → `spec-driven-development`'s sync protocol (`/spec-sync`): update the nexus, re-resolve cross-spec citations, propagate contract changes, recompute readiness
 - Making an architectural decision, changing a public API, or shipping a feature → `documentation-and-adrs`
+- Asked to audit or sanity-check the spec corpus, or wrapping up an edit that moved specs, decision records, or a nexus status table → `spec-corpus-hygiene`
 
 Anything outside spec generation or spec/decision maintenance is out of scope for this repo — implement it directly rather than reaching for a skill that no longer exists here.
 

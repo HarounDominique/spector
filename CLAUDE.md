@@ -7,7 +7,7 @@ This is Spector, a trimmed fork of the agent-skills project, kept down to the sk
 ## Project Structure
 
 ```
-skills/               → spec-driven-development, documentation-and-adrs (SKILL.md per directory)
+skills/               → spec-driven-development, documentation-and-adrs, spec-corpus-hygiene (SKILL.md per directory)
 .claude/commands/     → /spec, /spec-sync (Claude Code)
 .gemini/commands/     → /spec, /spec-sync (Gemini CLI)
 commands/             → /spec, /spec-sync (Antigravity CLI)
@@ -17,6 +17,7 @@ commands/             → /spec, /spec-sync (Antigravity CLI)
 
 - **spec-driven-development** — writes a structured spec before code; for multi-spec projects, also owns the nexus spec (`SPEC-NEXUS.md`: tech foundations, module status, blockers) and the sync protocol that keeps cross-spec citations and status current as modules change
 - **documentation-and-adrs** — records decisions and documentation, keeps the spec's context alive after it ships
+- **spec-corpus-hygiene** — audits the whole corpus for drift between what it claims and what's true: stale citations, derived figures that disagree with their source, and claims about built state that no longer match the code
 
 ## Conventions
 
