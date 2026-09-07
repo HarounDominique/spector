@@ -13,7 +13,7 @@
   "interface": {
     "displayName": "Spector",
     "shortDescription": "Spec-driven development for AI coding agents: write specs, record decisions.",
-    "longDescription": "Spector bundles spec-driven-development and documentation-and-adrs: write a structured spec before coding, and keep it and its decision records alive as the project evolves.",
+    "longDescription": "Spector bundles spec-driven-development, documentation-and-adrs, and spec-corpus-hygiene: write a structured spec before coding, keep it and its decision records alive as the project evolves, and audit the corpus for drift between what it claims and what's true.",
     "developerName": "Addy Osmani",
     "category": "Productivity",
     "capabilities": [

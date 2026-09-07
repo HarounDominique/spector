@@ -1,6 +1,6 @@
 # Contributing to Spector
 
-This is Spector, a trimmed fork kept down to the two skills that generate or maintain specs: `spec-driven-development` and `documentation-and-adrs`.
+This is Spector, a trimmed fork kept down to the skills that generate or maintain specs: `spec-driven-development`, `documentation-and-adrs`, and `spec-corpus-hygiene`.
 
 ## Scope
 
